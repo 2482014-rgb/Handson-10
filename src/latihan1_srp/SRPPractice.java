@@ -1,6 +1,6 @@
 package latihan1_srp;
 
-// import only the good package classes for convenience
+// import only the latihan2_ocp.bad.good package classes for convenience
 import latihan1_srp.good.*;
 
 public class SRPPractice {
@@ -8,7 +8,7 @@ public class SRPPractice {
         // ===== PART 1: BAD PRACTICE - Melanggar SRP =====
         System.out.println("=== BAD PRACTICE: Melanggar SRP ===\n");
 
-        // Use fully-qualified name for the bad implementation to avoid ambiguity
+        // Use fully-qualified name for the latihan2_ocp.latihan2_ocp.bad implementation to avoid ambiguity
         latihan1_srp.bad.NotificationService badService = new latihan1_srp.bad.NotificationService();
         badService.sendNotification("Hello World", "EMAIL", "user@example.com");
 
@@ -27,7 +27,7 @@ public class SRPPractice {
         // ===== PART 2: GOOD PRACTICE - Mengikuti SRP =====
         System.out.println("\n=== GOOD PRACTICE: Mengikuti SRP ===\n");
 
-        // create good components (these are in latihan1_srp.good so import worked)
+        // create latihan2_ocp.bad.good components (these are in latihan1_srp.latihan2_ocp.bad.good so import worked)
         MessageValidator validator = new MessageValidator();
         MessageFormatter formatter = new MessageFormatter();
         EmailSender emailSender = new EmailSender();
@@ -35,7 +35,7 @@ public class SRPPractice {
         NotificationLogger logger = new NotificationLogger();
         NotificationRepository repository = new NotificationRepository();
 
-        // use the good NotificationService (simple name refers to latihan1_srp.good.NotificationService)
+        // use the latihan2_ocp.bad.good NotificationService (simple name refers to latihan1_srp.latihan2_ocp.bad.good.NotificationService)
         NotificationService goodService = new NotificationService(
                 validator, formatter, emailSender, smsSender, logger, repository
         );
